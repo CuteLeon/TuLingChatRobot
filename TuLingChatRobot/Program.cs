@@ -153,13 +153,13 @@ namespace TuLingChatRobot
         /// <param name="Message">用户消息</param>
         private static void RobotSay(string Message)
         {
-            Console.BackgroundColor = ConsoleColor.DarkGray;
+            //Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("[{0}] {1} : ", DateTime.Now.ToString("yyy-MM-dd hh:mm:ss"), RobotName);
             Console.ResetColor();
             Console.WriteLine("<<<\t{0}", Message);
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            //Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("* Me : ");
             Console.ResetColor();
             Console.Write(">>>\t");
