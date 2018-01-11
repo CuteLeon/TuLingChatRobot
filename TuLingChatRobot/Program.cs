@@ -17,6 +17,7 @@ namespace TuLingChatRobot
         * 此程序使用图灵机器人服务
         * 机器人管理地址：http://www.tuling123.com/member/robot/index.jhtml
         * 机器人设置地址：http://www.tuling123.com/member/robot/1015495/center/frame.jhtml?url=/member/robot/1015495/detail.jhtml
+        * 机器人帮助文档：http://www.tuling123.com/help/h_cent_webapi.jhtml?nav=doc
         * 邮箱：2543280836@qq.com
         */
         #endregion
@@ -244,6 +245,25 @@ namespace TuLingChatRobot
             }
             return true;
         }
+
+        /*
+         * 文字类：
+        {"code":100000,"text":"你也好 嘻嘻"}
+         * 链接类：
+        {"code": 200000,"text": "亲，已帮你找到图片","url": "http://m.image.so.com/i?q=%E5%B0%8F%E7%8B%97"}
+         * 新闻类：                      
+        {"code": 302000,"text": "亲，已帮您找到相关新闻","list": [{"article": "工信部:今年将大幅提网速降手机流量费","source": "网易新闻", "icon": "","detailurl": "http://news.163.com/15/0416/03/AN9SORGH0001124J.html"},{"article": "北京最强沙尘暴午后袭沪 当地叫停广场舞","source": "网易新闻", "icon": "","detailurl": "http://news.163.com/15/0416/14/ANB2VKVC00011229.html"},{"article": "公安部:小客车驾照年内试点自学直考","source": "网易新闻", "icon": "","detailurl": "http://news.163.com/15/0416/01/AN9MM7CK00014AED.html"}]}
+         * 列车类：
+        {"code": 200000,"text": "亲，已帮你找到列车信息","url": "http://touch.qunar.com/h5/train/trainList?startStation=%E5%8C%97%E4%BA%AC&endStation=%E6%8B%89%E8%90%A8&searchType=stasta&date=2015-12-25&sort=3&filterTrainType=1&filterTrainType=2&filterTrainType=3&filterTrainType=4&filterTrainType=5&filterTrainType=6&filterTrainType=7&filterDeptTimeRa"}
+         * 航班类：
+        {"code": 200000,"text": "亲，已帮您找到航班信息","url": "http://touch.qunar.com/h5/flight/flightlist?bd_source=chongdong&startCity=%E5%8C%97%E4%BA%AC&destCity=%E6%8B%89%E8%90%A8&startDate=2015-12-25&backDate=&flightType=oneWay&priceSortType=1"}
+         * 菜谱类：
+        {"code": 308000,"text": "亲，已帮您找到菜谱信息","list": [{"name": "鱼香肉丝","icon": "http://i4.xiachufang.com/image/280/cb1cb7c49ee011e38844b8ca3aeed2d7.jpg","info": "猪肉、鱼香肉丝调料 | 香菇、木耳、红萝卜、黄酒、玉米淀粉、盐","detailurl": "http://m.xiachufang.com/recipe/264781/"}]}
+         * 歌曲类：
+        {"code": 313000,"text": "开始播放音乐。","function": {"song": "刘德华","singer": "忘情水"}}
+         * 诗词类：
+        {"code": 314000,"text": "开始朗读诗词。","function": {"author": "李白","name": "望庐山瀑布"}}
+         */
 
     }
 }
