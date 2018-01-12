@@ -187,19 +187,52 @@ namespace TuLingChatRobot
             Debug.Print("分析返回消息: {0}", returnMessage);
             try
             {
-                string MessagePattern = "{.*?\"code\":(?<RobotCode>.+?),.*?\"text\":\"(?<RobotMessage>.+?)\".*?}";
-                Regex MessageRegex = new Regex(MessagePattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                Match MessageMatch = MessageRegex.Match(returnMessage);
-                if (MessageMatch.Success)
+                string MessagePattern = string.Empty;
+                Regex MessageRegex = null;
+                Match MessageMatch = null;
+                switch (robotCode)
                 {
-                    robotCode = MessageMatch.Groups["RobotCode"].Value as string;
-                    robotMessage = MessageMatch.Groups["RobotMessage"].Value as string;
-                    return true;
-                }
-                else
-                {
-                    Debug.Print("无法正则匹配的消息: {0}", returnMessage);
-                    return false;
+                    //普通消息
+                    case "100000":
+                        {
+                            MessagePattern = "{.*?\"code\":(?<RobotCode>.+?),.*?\"text\":\"(?<RobotMessage>.+?)\".*?}";
+                            MessageRegex = new Regex(MessagePattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                            MessageMatch = MessageRegex.Match(returnMessage);
+                            if (MessageMatch.Success)
+                            {
+                                robotCode = MessageMatch.Groups["RobotCode"].Value as string;
+                                robotMessage = MessageMatch.Groups["RobotMessage"].Value as string;
+                                return true;
+                            }
+                            else
+                            {
+                                Debug.Print("无法正则匹配的消息: {0}", returnMessage);
+                                return false;
+                            }
+                        }
+                    //链接消息
+                    case "200000":
+                        {
+                            MessagePattern = "{.*?\"code\":(?<RobotCode>.+?),.*?\"text\":\"(?<RobotMessage>.+?)\",\"url\":\"(?<RobotLink>.+?)\".*?}";
+                            MessageRegex = new Regex(MessagePattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                            MessageMatch = MessageRegex.Match(returnMessage);
+                            if (MessageMatch.Success)
+                            {
+                                robotCode = MessageMatch.Groups["RobotCode"].Value as string;
+                                robotMessage = MessageMatch.Groups["RobotMessage"].Value as string;
+                                return true;
+                            }
+                            else
+                            {
+                                Debug.Print("无法正则匹配的消息: {0}", returnMessage);
+                                return false;
+                            }
+                        }
+                    default:
+                        {
+                            Debug.Print("未知的返回代码: {0}", robotCode);
+                            return false;
+                        }
                 }
             }
             catch (Exception ex)
