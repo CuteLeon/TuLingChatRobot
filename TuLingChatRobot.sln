@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuLingChatRobot", "TuLingChatRobot\TuLingChatRobot.csproj", "{88A621C2-46B6-480E-AA89-97E53749A456}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuLingChatRobot.Core", "TuLingChatRobot.Core\TuLingChatRobot.Core.csproj", "{36BBF831-E222-4E67-BEC3-F654CBC62C9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{88A621C2-46B6-480E-AA89-97E53749A456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A621C2-46B6-480E-AA89-97E53749A456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A621C2-46B6-480E-AA89-97E53749A456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36BBF831-E222-4E67-BEC3-F654CBC62C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BBF831-E222-4E67-BEC3-F654CBC62C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BBF831-E222-4E67-BEC3-F654CBC62C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BBF831-E222-4E67-BEC3-F654CBC62C9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
