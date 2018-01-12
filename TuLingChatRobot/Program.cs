@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using System.Speech.Synthesis;
 
 namespace TuLingChatRobot
 {
@@ -62,6 +63,10 @@ namespace TuLingChatRobot
         /// 聊天客户端
         /// </summary>
         private static WebClient ChatClient = null;
+        /// <summary>
+        /// 全局朗读者
+        /// </summary>
+        private static SpeechSynthesizer UnitySpeecher = null;
 
         static void Main(string[] args)
         {
@@ -85,6 +90,15 @@ namespace TuLingChatRobot
                 Console.WriteLine("\n(按任意键结束...)");
                 Console.Read();
                 Environment.Exit(0);
+            }
+
+            try
+            {
+                UnitySpeecher = new SpeechSynthesizer();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("朗读者创建失败，将无法使用朗读功能：{0}", ex.Message);
             }
             Console.Clear();
 
@@ -165,6 +179,9 @@ namespace TuLingChatRobot
         /// <param name="robotLinks">机器人链接</param>
         private static void RobotSay(string Message, List<string> robotLinks)
         {
+            UnitySpeecher?.SpeakAsyncCancelAll();
+            UnitySpeecher?.SpeakAsync(Message);
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[{0}] {1} : ", DateTime.Now.ToString("yyy-MM-dd hh:mm:ss"), RobotName);
             Console.ResetColor();
@@ -196,6 +213,9 @@ namespace TuLingChatRobot
         /// <param name="Message">机器人消息</param>
         private static void RobotSay(string Message)
         {
+            UnitySpeecher?.SpeakAsyncCancelAll();
+            UnitySpeecher?.SpeakAsync(Message);
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[{0}] {1} : ", DateTime.Now.ToString("yyy-MM-dd hh:mm:ss"), RobotName);
             Console.ResetColor();
