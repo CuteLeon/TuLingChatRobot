@@ -152,18 +152,18 @@ namespace TuLingChatRobot.Core
         /// <param name="robotLinks">机器人链接</param>
         private static void RobotSay(string Message, List<string> robotLinks)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("[{0}] {1} : ", DateTime.Now.ToString("yyy-MM-dd hh:mm:ss"), RobotName);
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("<<<\t{0}", Message);
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("\t" + string.Join("\n\t", robotLinks.ToArray()));
             Console.ResetColor();
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("* Me : ");
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">>>\t");
         }
 
@@ -183,13 +183,13 @@ namespace TuLingChatRobot.Core
         /// <param name="Message">机器人消息</param>
         private static void RobotSay(string Message)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("[{0}] {1} : ", DateTime.Now.ToString("yyy-MM-dd hh:mm:ss"), RobotName);
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("<<<\t{0}", Message);
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("* Me : ");
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write(">>>\t");
         }
 
