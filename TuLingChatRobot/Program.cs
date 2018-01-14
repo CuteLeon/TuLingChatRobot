@@ -11,7 +11,6 @@ namespace TuLingChatRobot
 {
     class Program
     {
-        //todo:可以写一个方法根据code返回对应的正则表达式，以分析其他类型的消息
 
         #region 说明
         /*
@@ -95,6 +94,7 @@ namespace TuLingChatRobot
             try
             {
                 UnitySpeecher = new SpeechSynthesizer();
+                Console.WriteLine("朗读者创建完成...");
             }
             catch (Exception ex)
             {
